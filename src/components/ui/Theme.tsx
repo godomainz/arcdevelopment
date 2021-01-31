@@ -2,7 +2,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 const arcBlue = "#0B72B9";
 const arcOrange = "#FFBA60";
-const Theme = createMuiTheme(
+const Theme: any = createMuiTheme(
     {
         palette: {
             common: {
@@ -16,10 +16,11 @@ const Theme = createMuiTheme(
                 main: `${arcOrange}`
             }
         },
-        typography: {
-            h3: {
-                fontWeight: 300
-            }
+        tab: {
+            fontFamily: "Railway",
+            textTransform: "none",
+            fontWeight: 700,
+            fontSize: "1rem",
         }
     }
 );
