@@ -23,7 +23,7 @@ const Header = (props:any) => {
         <AppBar position="fixed">
           <Toolbar disableGutters>
             <img src={logo} alt="company logo" className={classes.logo}/>
-            <Tabs className={classes.tabContainer} value={value} onChange={handleChange} aria-label="simple tabs example">
+            <Tabs className={classes.tabContainer} value={value} onChange={handleChange} indicatorColor="primary">
               <Tab className={classes.tab} label="Home"/>
               <Tab className={classes.tab} label="Services"/>
               <Tab className={classes.tab} label="The Revolution"/>
