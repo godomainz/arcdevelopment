@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Theme } from '@material-ui/core/styles/createMuiTheme';
 declare module '*.css'{
     const classes: {
