@@ -18,6 +18,7 @@ const Header = (props:any) => {
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [open, setOpen] = useState<boolean>(false);
+  const [selectedIndex, setSelectedIndex ] = useState(0);
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
@@ -28,11 +29,23 @@ const Header = (props:any) => {
     setOpen(true);
   };
 
+  const handleMenuItemClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, index: number) => {
+    setAnchorEl(null);
+    setOpen(false);
+    setSelectedIndex(index);
+    handleClose();
+  };
+
   const handleClose = () => {
     setAnchorEl(null);
     setOpen(false);
     setValue(1);
   };
+
+  const menuOptions: {name: string, link: string}[] = [ {name: "Services",link: "/services"}, 
+                                                      {name: "Custom Software Development",link: "/customsoftware"},
+                                                      {name: "Mobile App Development",link: "/mobileapps"},
+                                                      {name: "Website Development",link: "/websites"}];
 
   useEffect(() => {
     if(window.location.pathname === "/" && value !== 0){
@@ -80,10 +93,20 @@ const Header = (props:any) => {
                   open={open} onClose={handleClose} 
                   MenuListProps={{onMouseLeave: handleClose}}
                   elevation={0}>
-              <MenuItem onClick={handleClose} component={Link} to="services" classes={{root: classes.menuItem}}>Services</MenuItem>
-              <MenuItem onClick={handleClose} component={Link} to="customsoftware" classes={{root: classes.menuItem}}>Custom Software Development</MenuItem>
-              <MenuItem onClick={handleClose} component={Link} to="mobileapps" classes={{root: classes.menuItem}}>Mobile App Development</MenuItem>
-              <MenuItem onClick={handleClose} component={Link} to="websites" classes={{root: classes.menuItem}}>Website Development</MenuItem>
+              {
+                menuOptions.map((option,i) =>(
+                  <MenuItem
+                    key={i}
+                    onClick={(event:React.MouseEvent<HTMLAnchorElement, MouseEvent>)=>handleMenuItemClick(event,i)} 
+                    component={Link} 
+                    to={option.link} 
+                    classes={{root: classes.menuItem}}
+                    selected={i === selectedIndex && value === 1}>
+                    {option.name}
+                    </MenuItem>
+                ))
+              }
+              
             </Menu>
           </Toolbar>
         </AppBar>
