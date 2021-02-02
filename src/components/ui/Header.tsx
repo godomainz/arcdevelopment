@@ -69,8 +69,8 @@ const Header = (props:any) => {
                     to="/services" 
                     label="Services"/>
               <Tab className={classes.tab} component={Link} to="/revolution" label="The Revolution"/>
-              <Tab className={classes.tab}component={Link} to="/about" label="About Us"/>
-              <Tab className={classes.tab}component={Link} to="/contact" label="Contact Us"/>
+              <Tab className={classes.tab} component={Link} to="/about" label="About Us"/>
+              <Tab className={classes.tab} component={Link} to="/contact" label="Contact Us"/>
             </Tabs>
       
             <Button variant="contained" color="secondary" className={classes.button}>Free Estimate</Button>
