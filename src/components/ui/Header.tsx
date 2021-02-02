@@ -74,11 +74,16 @@ const Header = (props:any) => {
             </Tabs>
       
             <Button variant="contained" color="secondary" className={classes.button}>Free Estimate</Button>
-            <Menu id="simple-menu" anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{onMouseLeave: handleClose}}>
-              <MenuItem onClick={handleClose} component={Link} to="services">Services</MenuItem>
-              <MenuItem onClick={handleClose} component={Link} to="customsoftware">Custom Software Development</MenuItem>
-              <MenuItem onClick={handleClose} component={Link} to="mobileapps">Mobile App Development</MenuItem>
-              <MenuItem onClick={handleClose} component={Link} to="websites">Website Development</MenuItem>
+            <Menu id="simple-menu" 
+                  anchorEl={anchorEl} 
+                  classes={{paper: classes.menu}} 
+                  open={open} onClose={handleClose} 
+                  MenuListProps={{onMouseLeave: handleClose}}
+                  elevation={0}>
+              <MenuItem onClick={handleClose} component={Link} to="services" classes={{root: classes.menuItem}}>Services</MenuItem>
+              <MenuItem onClick={handleClose} component={Link} to="customsoftware" classes={{root: classes.menuItem}}>Custom Software Development</MenuItem>
+              <MenuItem onClick={handleClose} component={Link} to="mobileapps" classes={{root: classes.menuItem}}>Mobile App Development</MenuItem>
+              <MenuItem onClick={handleClose} component={Link} to="websites" classes={{root: classes.menuItem}}>Website Development</MenuItem>
             </Menu>
           </Toolbar>
         </AppBar>
@@ -117,6 +122,18 @@ const useStyles = makeStyles(theme => (
       padding: 0,
       "&:hover": {
         backgroundColor: "transparent"
+      }
+    },
+    menu: {
+      backgroundColor: theme.blue,
+      color: "white",
+      borderRadius: 0
+    },
+    menuItem: {
+      ...theme.tab,
+      opacity: 0.7,
+      "&:hover": {
+        opacity: 1
       }
     }
   }

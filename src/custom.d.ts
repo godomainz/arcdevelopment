@@ -9,11 +9,15 @@ declare module '*.css'{
 declare module '@material-ui/core/styles/createMuiTheme' {
     interface Theme {
         tab:any,
-        estimate: any
+        estimate: any,
+        blue: string,
+        orange: string
       }
       // allow configuration using `createMuiTheme`
       interface ThemeOptions {
         tab:any,
-        estimate: any
+        estimate: any,
+        blue: string,
+        orange: string
       }
   }

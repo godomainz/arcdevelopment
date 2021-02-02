@@ -5,10 +5,6 @@ const arcOrange = "#FFBA60";
 const Theme: any = createMuiTheme(
     {
         palette: {
-            common: {
-                // blue: `${arcBlue}`,
-                // orange: `${arcOrange}`
-            },
             primary: {
                 main : `${arcBlue}`
             },
@@ -27,7 +23,9 @@ const Theme: any = createMuiTheme(
             fontSize: "1rem",
             textTransform: "none",
             color: "white"
-        }
+        },
+        blue: `${arcBlue}`,
+        orange: `${arcOrange}`
     }
 );
 
