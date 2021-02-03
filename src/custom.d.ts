@@ -13,12 +13,12 @@ declare module '@material-ui/core/styles/createMuiTheme' {
         estimate: any,
         blue: string,
         orange: string
-      }
-      // allow configuration using `createMuiTheme`
-      interface ThemeOptions {
+    }
+        // allow configuration using `createMuiTheme`
+    interface ThemeOptions {
         tab:any,
         estimate: any,
         blue: string,
         orange: string
-      }
-  }
+    }
+}
